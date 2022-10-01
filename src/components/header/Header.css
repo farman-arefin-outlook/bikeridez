@@ -1,0 +1,105 @@
+.orange {
+    color: orangered;
+}
+
+.gfont {
+    font-family: 'Anton',
+        sans-serif;
+}
+
+.gfontH {
+    font-family: 'Anton',
+        sans-serif;
+    font-family: 'Teko',
+        sans-serif;
+}
+
+.pic img {
+    height: 160px;
+    width: 100px;
+
+    align-items: center;
+    justify-content: center;
+    margin-left: 190px;
+}
+
+.link-button {
+    background-color: #fe5915;
+    color: white;
+    border-width: 4px;
+    border-style: solid;
+    padding: 14px 30px;
+    margin: 10px 0 0;
+    border: none;
+}
+
+.shop-now-button {
+    background-color: azure;
+    border-color: #fe5915;
+    border-style: solid;
+    border-width: 4px;
+    padding: 14px 30px;
+    margin: 10px 0 0;
+}
+
+.shop-now-button:hover {
+    background-color: #fe5915;
+    color: white;
+    border-width: 4px;
+    border-style: solid;
+    padding: 14px 30px;
+    margin: 10px 0 0;
+    border: none;
+}
+
+
+.banner-section-2 {
+    background-color: #171717;
+    background-image: url("../../assets/images/banner2.jpg");
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    margin-top: 0;
+    margin-bottom: 100px;
+    padding: 140px 30px;
+}
+
+.explore-products {
+    font-family: Sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: #fe5915;
+    padding: 20px 40px;
+    border: none;
+    color: white;
+}
+
+.explore-products:hover {
+    font-family: Sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: white;
+    padding: 20px 40px;
+    border: none;
+    color: black;
+}
+
+.subscribe {
+    background-image: url("../../assets/images/h3-banner2.png");
+    background-color: #000000;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+
+
+.car-back {
+    background-image: url("../../assets/images/rev_home1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100% !important;
+    display: block;
+}
