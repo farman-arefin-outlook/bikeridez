@@ -32,7 +32,7 @@ const Header = () => {
                 </Container>
             </Navbar>
             <Navbar sticky='top' style={{ background: `url(${navBG2})` }} collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <Container fluid>
+                {/* <Container fluid>
                     <Nav className="ms-auto align-items-center">
                         <Nav.Link as={NavLink} to="/home" className="custom-logo">
                             HOME
@@ -58,7 +58,7 @@ const Header = () => {
                         </Nav>
 
                     </Navbar.Collapse>
-                </Container>
+                </Container> */}
             </Navbar>
         </div>
     );

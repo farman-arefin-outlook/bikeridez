@@ -2,29 +2,29 @@ import React from 'react';
 import { Card, CardGroup, Carousel, Col, Container, NavLink, Row } from 'react-bootstrap';
 import { Bounce, Fade, Slide } from 'react-reveal';
 
-import slider1 from '../../assets/slider1.jpg';
-import slider2 from '../../assets/slider2.png';
-import slider3 from '../../assets/slider3.jpg';
+import slider1 from '../../assets/images/slider1.jpg';
+import slider2 from '../../assets/images/slider2.png';
+import slider3 from '../../assets/images/slider3.jpg';
 
-import banner1 from '../../assets/h1-banner1.jpg';
-import banner2 from '../../assets/h1-banner2.jpg';
-import banner3 from '../../assets/h1-banner3.jpg';
+import banner1 from '../../assets/images/h1-banner1.jpg';
+import banner2 from '../../assets/images/h1-banner2.jpg';
+import banner3 from '../../assets/images/h1-banner3.jpg';
 import '../Home/Home.css';
 import rev from '../../assets/rev_home1.jpg';
 
-import cimg1 from '../../assets/helmet1.jpg';
-import cimg2 from '../../assets/bycle-wheel.jpg';
-import cimg3 from '../../assets/cycle-icon.jpg';
+import cimg1 from '../../assets/images/helmet1.jpg';
+import cimg2 from '../../assets/images/bycle-wheel.jpg';
+import cimg3 from '../../assets/images/cycle-icon.jpg';
 
 
-import hbanner1 from '../../assets/h2-banner2.jpg';
-import hbanner2 from '../../assets/h2-banner1.jpg';
+import hbanner1 from '../../assets/images/h2-banner2.jpg';
+import hbanner2 from '../../assets/images/h2-banner1.jpg';
 
 
-import bannerS2 from '../../assets/banner2.jpg';
+import bannerS2 from '../../assets/images/banner2.jpg';
 
-import h3banner1 from '../../assets/h3-banner1.png';
-import h3banner2 from '../../assets/h3-banner2.png';
+import h3banner1 from '../../assets/images/h3-banner1.png';
+import h3banner2 from '../../assets/images/h3-banner2.png';
 import useAuth from '../../hooks/useAuth';
 import Item from '../Item/Item';
 
