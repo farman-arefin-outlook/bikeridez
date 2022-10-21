@@ -103,3 +103,15 @@
     width: 100% !important;
     display: block;
 }
+
+
+.badge {
+    background-color: #fe5915 !important;
+    font-size: 17px !important;
+    padding: 0 !important;
+    top: -6px !important;
+    position: relative;
+    width: 15px !important;
+    display: inline-block;
+    border-radius: 50%;
+}
