@@ -17,7 +17,7 @@ import '../header/Header.css';
 const Header = () => {
     return (
         <div className='gfont'>
-            <Navbar className="my-0 p-0 gfontH" style={{ background: `url(${navBG})` }} bg="dark" variant="dark">
+            <Navbar className="my-0 p-0 gfontH ms-auto align-items-center" style={{ background: `url(${navBG})` }} bg="dark" variant="dark">
                 <Container>
                     <Nav>
                         <Nav.Link href="#shipping">Shipping</Nav.Link>
@@ -37,8 +37,20 @@ const Header = () => {
                 <Container>
                     <Nav className="me-auto">
                         <Nav.Link as={NavLink} to="/home">Home</Nav.Link>
+                        <Nav.Link as={NavLink} to="/pages">Pages</Nav.Link>
+                        <Nav.Link as={NavLink} to="/gallery">Gallery</Nav.Link>
+                        <Nav.Link as={NavLink} to="/blogs">Blogs</Nav.Link>
                         <Nav.Link as={NavLink} to="/about">About</Nav.Link>
                         <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
+                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                        <Navbar.Collapse id="responsive-navbar-nav">
+                            <Nav className="m-5 p-5 my-lg-0 justify-content-center align-items-center"
+                                style={{ maxHeight: '100px' }}
+                                navbarScroll>
+                                <Navbar.Brand className="justify-content-center align-items-center ms-auto" href="#home"><img src={logo} width='200px' height='70px' className='align-items-center justify-content-center' alt="Logo" /></Navbar.Brand>
+                            </Nav>
+
+                        </Navbar.Collapse>
                         <Nav.Link as={NavLink} to="/signup">Sign Up</Nav.Link>
                         <Nav.Link as={NavLink} to="/login">Log In</Nav.Link>
                         <Nav.Link href="#link"><FontAwesomeIcon icon={faShoppingCart} /><Badge className='badge'>0</Badge></Nav.Link>
