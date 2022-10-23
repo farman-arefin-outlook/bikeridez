@@ -9,7 +9,7 @@ import {
     faCloud,
     faShoppingCart
 } from "@fortawesome/free-solid-svg-icons";
-import { faFacebook, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faPinterest, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 import '../header/Header.css';
 const Header = () => {
@@ -25,9 +25,11 @@ const Header = () => {
                     </Nav>
                     <Nav className='text-end'>
                         <Nav.Link href="#track">Follow Us : </Nav.Link>
-                        <Nav.Link href="#track"><FontAwesomeIcon icon={faTwitter} /></Nav.Link>
                         <Nav.Link href="#track"><FontAwesomeIcon icon={faFacebook} /></Nav.Link>
-                        <Nav.Link href="#track"><FontAwesomeIcon icon={faLinkedin} /></Nav.Link>
+                        <Nav.Link href="#track"><FontAwesomeIcon icon={faTwitter} /></Nav.Link>
+                        <Nav.Link href="#track"><FontAwesomeIcon icon={faInstagram} /></Nav.Link>
+                        <Nav.Link href="#track"><FontAwesomeIcon icon={faYoutube} /></Nav.Link>
+                        <Nav.Link href="#track"><FontAwesomeIcon icon={faPinterest} /></Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>

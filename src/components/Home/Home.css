@@ -55,7 +55,7 @@
 
 .banner-section-2 {
     background-color: #171717;
-    background-image: url("../../assets/images/banner2.jpg");
+    background-image: url("../../assets/images/rev_home1.jpg");
     background-position: bottom right;
     background-repeat: no-repeat;
     margin-top: 0;
@@ -85,7 +85,7 @@
     color: black;
 }
 
-.subscribe {
+/* .subscribe {
     background-image: url("../../assets/images/h3-banner2.png");
     background-color: #000000;
     background-repeat: no-repeat;
@@ -96,10 +96,10 @@
 
 
 .car-back {
-    background-image: url("../../assets/images/rev_home1.jpg");
+    background-image: url("../../assets/rev_home1.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     width: 100% !important;
     display: block;
-}
+} */
