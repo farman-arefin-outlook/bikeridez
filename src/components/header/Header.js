@@ -14,7 +14,8 @@ import { faFacebook, faInstagram, faPinterest, faTwitter, faYoutube } from '@for
 import '../header/Header.css';
 import useAuth from '../hooks/useAuth';
 const Header = () => {
-    const { user } = useAuth();
+    const { user, logOut } = useAuth();
+    const { displayName, photoURL, email } = user;
     return (
         <div className='gfont'>
             <Navbar className="my-0 p-0 gfontH ms-auto align-items-center" style={{ background: `url(${navBG})` }} bg="dark" variant="dark">
@@ -37,13 +38,13 @@ const Header = () => {
             </Navbar>
             <Navbar sticky='top' style={{ background: `url(${navBG2})` }} collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Nav className="me-auto">
-                        <Nav.Link className='pt-4' as={NavLink} to="/home">Home</Nav.Link>
-                        <Nav.Link as={NavLink} className='pt-4' to="/pages">Pages</Nav.Link>
-                        <Nav.Link as={NavLink} className='pt-4' to="/gallery">Gallery</Nav.Link>
-                        <Nav.Link as={NavLink} className='pt-4' to="/blogs">Blogs</Nav.Link>
-                        <Nav.Link as={NavLink} className='pt-4' to="/about">About</Nav.Link>
-                        <Nav.Link as={NavLink} className='pt-4' to="/contact">Contact</Nav.Link>
+                    <Nav className="me-auto align-items-center">
+                        <Nav.Link as={NavLink} to="/home">Home</Nav.Link>
+                        <Nav.Link as={NavLink} to="/pages">Pages</Nav.Link>
+                        <Nav.Link as={NavLink} to="/gallery">Gallery</Nav.Link>
+                        <Nav.Link as={NavLink} to="/blogs">Blogs</Nav.Link>
+                        <Nav.Link as={NavLink} to="/about">About</Nav.Link>
+                        <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="m-5 p-5 my-lg-0 justify-content-center align-items-center"
@@ -53,23 +54,23 @@ const Header = () => {
                             </Nav>
 
                         </Navbar.Collapse>
-                        {!user.displayName ?
-                            (<><Nav.Link as={NavLink} className='pt-4' to="/signup">Sign Up</Nav.Link>
-                                <Nav.Link as={NavLink} className='pt-4' to="/login">Log In</Nav.Link></>) : (<span>{user.displayName}</span>)
-                        }
                         <Nav.Link as={NavLink} className='pt-4' to="/favourite"><FontAwesomeIcon icon={faCloud} /></Nav.Link>
                         <Nav.Link className='pt-4' href="#link"><FontAwesomeIcon icon={faShoppingCart} /><Badge className='badge'>0</Badge></Nav.Link>
-                        <NavDropdown className='pt-3' title="Dropdown" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                Another action
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
-                                Separated link
-                            </NavDropdown.Item>
-                        </NavDropdown>
+                        {!user.displayName ?
+                            (<><Nav.Link as={NavLink} className='pt-4' to="/signup">Sign Up</Nav.Link>
+                                <Nav.Link as={NavLink} className='pt-4' to="/login">Log In</Nav.Link></>) : (<NavDropdown className='pt-3' title={
+                                    <img style={{ width: '45px', borderRadius: '50%' }} src={photoURL} alt="" />
+                                } id="basic-nav-dropdown">
+                                    <div className="text-center">
+                                        <h6>{displayName}</h6>
+                                        <p className="m-0">
+                                            {email}
+                                        </p>
+                                        <button onClick={logOut} className='btn btn-primary'>Sign Out</button>
+                                    </div>
+                                </NavDropdown>)
+                        }
+
                     </Nav>
                 </Container>
             </Navbar>
