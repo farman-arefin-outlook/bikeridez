@@ -12,7 +12,9 @@ import {
 import { faFacebook, faInstagram, faPinterest, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 import '../header/Header.css';
+import useAuth from '../hooks/useAuth';
 const Header = () => {
+    const { user } = useAuth();
     return (
         <div className='gfont'>
             <Navbar className="my-0 p-0 gfontH ms-auto align-items-center" style={{ background: `url(${navBG})` }} bg="dark" variant="dark">
@@ -51,8 +53,10 @@ const Header = () => {
                             </Nav>
 
                         </Navbar.Collapse>
-                        <Nav.Link as={NavLink} className='pt-4' to="/signup">Sign Up</Nav.Link>
-                        <Nav.Link as={NavLink} className='pt-4' to="/login">Log In</Nav.Link>
+                        {!user.displayName ?
+                            (<><Nav.Link as={NavLink} className='pt-4' to="/signup">Sign Up</Nav.Link>
+                                <Nav.Link as={NavLink} className='pt-4' to="/login">Log In</Nav.Link></>) : (<span>{user.displayName}</span>)
+                        }
                         <Nav.Link as={NavLink} className='pt-4' to="/favourite"><FontAwesomeIcon icon={faCloud} /></Nav.Link>
                         <Nav.Link className='pt-4' href="#link"><FontAwesomeIcon icon={faShoppingCart} /><Badge className='badge'>0</Badge></Nav.Link>
                         <NavDropdown className='pt-3' title="Dropdown" id="basic-nav-dropdown">

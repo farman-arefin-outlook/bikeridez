@@ -338,17 +338,18 @@ const Home = () => {
                             <img style={{ marginTop: '-350px' }} src={h3banner1} alt="" />
                         </Col>
                         <Col lg='4' xs='12'>
-                            <FontAwesomeIcon className="icon-size" icon={faEnvelopeCircleCheck} />
-                            <h2>SUBSCRIBE US</h2>
-                            <p style={{ color: "GrayText" }}>And get the scoop on sales & new gear!</p>
+
+                            <h1 className='mt-5'>
+                                NEWSLETTER
+                            </h1>
                             <Form className="d-flex">
                                 <FormControl
-                                    type="sub"
-                                    placeholder="Search"
+                                    type="subscribe"
+                                    placeholder="Subscribe"
                                     className="me-2"
-                                    aria-label="Search"
+                                    aria-label="Subscribe"
                                 />
-                                <button className="btn btn-danger">Search</button>
+                                <button className="btn btn-danger">Subscribe</button>
                             </Form>
                         </Col>
                     </Row>

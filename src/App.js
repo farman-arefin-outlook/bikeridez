@@ -15,49 +15,53 @@ import PageNotFound from './components/PageNotFound/PageNotFound';
 import Header from './components/header/Header';
 import About from './components/About/About';
 import Footer from './components/Footer/Footer';
+import AuthProvider from './components/contexts/AuthProvider';
+import Login from './components/Login/Login';
 
 function App() {
   return (
     <div>
-      <Router>
-        <Header></Header>
-        <Switch>
-          <Route exact path='/'>
-            <Home></Home>
-          </Route>
-          <Route path='/home'>
-            <Home></Home>
-          </Route>
-          <Route path='/about'>
-            <About></About>
-          </Route>
-          <Route path='/contact'>
-            <Contact></Contact>
-          </Route>
-          <Route path='/pages'>
-            <Pages></Pages>
-          </Route>
-          <Route path='/blogs'>
-            <Blogs></Blogs>
-          </Route>
-          <Route path='/gallery'>
-            <Gallery></Gallery>
-          </Route>
-          <Route path='/cart'>
-            <Gallery></Gallery>
-          </Route>
-          <Route path='/login'>
-            <Gallery></Gallery>
-          </Route>
-          <Route path='/signup'>
-            <Gallery></Gallery>
-          </Route>
-          <Route path='*'>
-            <PageNotFound></PageNotFound>
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Header></Header>
+          <Switch>
+            <Route exact path='/'>
+              <Home></Home>
+            </Route>
+            <Route path='/home'>
+              <Home></Home>
+            </Route>
+            <Route path='/about'>
+              <About></About>
+            </Route>
+            <Route path='/contact'>
+              <Contact></Contact>
+            </Route>
+            <Route path='/pages'>
+              <Pages></Pages>
+            </Route>
+            <Route path='/blogs'>
+              <Blogs></Blogs>
+            </Route>
+            <Route path='/gallery'>
+              <Gallery></Gallery>
+            </Route>
+            <Route path='/cart'>
+              <Gallery></Gallery>
+            </Route>
+            <Route path='/login'>
+              <Login></Login>
+            </Route>
+            <Route path='/signup'>
+              <Gallery></Gallery>
+            </Route>
+            <Route path='*'>
+              <PageNotFound></PageNotFound>
+            </Route>
+          </Switch>
+          <Footer></Footer>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
