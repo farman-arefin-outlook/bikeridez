@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardGroup, Carousel, Col, Container, NavLink, Row } from 'react-bootstrap';
+import { Card, CardGroup, Carousel, Col, Container, Form, FormControl, NavLink, Row } from 'react-bootstrap';
 import { Bounce, Fade, Slide } from 'react-reveal';
 
 import slider1 from '../../assets/images/slider1.jpg';
@@ -23,6 +23,8 @@ import hbanner2 from '../../assets/images/h2-banner1.jpg';
 import bannerS2 from '../../assets/images/banner2.jpg';
 
 import h3banner1 from '../../assets/images/h3-banner1.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelopeCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
     //const { items } = useAuth();
@@ -331,8 +333,27 @@ const Home = () => {
 
             <div className='subscribe mb-5'>
                 <div>
-                    <img style={{ marginTop: '-350px' }} src={h3banner1} alt="" />
+                    <Row>
+                        <Col>
+                            <img style={{ marginTop: '-350px' }} src={h3banner1} alt="" />
+                        </Col>
+                        <Col lg='4' xs='12'>
+                            <FontAwesomeIcon className="icon-size" icon={faEnvelopeCircleCheck} />
+                            <h2>SUBSCRIBE US</h2>
+                            <p style={{ color: "GrayText" }}>And get the scoop on sales & new gear!</p>
+                            <Form className="d-flex">
+                                <FormControl
+                                    type="sub"
+                                    placeholder="Search"
+                                    className="me-2"
+                                    aria-label="Search"
+                                />
+                                <button className="btn btn-danger">Search</button>
+                            </Form>
+                        </Col>
+                    </Row>
                 </div>
+
             </div>
         </div >
 

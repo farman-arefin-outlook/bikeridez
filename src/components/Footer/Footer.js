@@ -1,5 +1,4 @@
 import React from "react";
-import "./Footer.css";
 import payment from "./../../assets/images/payment.png";
 import FooterBg from './../../assets/images/Footer_BG.jpg';
 import { Col, Container, Form, FormControl, Row } from "react-bootstrap";
@@ -13,6 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 
+import '../Footer/Footer.css';
 
 const Footer = () => {
     return (

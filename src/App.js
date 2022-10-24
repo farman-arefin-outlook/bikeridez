@@ -14,6 +14,7 @@ import Gallery from './components/Gallery/Gallery';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import Header from './components/header/Header';
 import About from './components/About/About';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
             <PageNotFound></PageNotFound>
           </Route>
         </Switch>
+        <Footer></Footer>
       </Router>
     </div>
   );
