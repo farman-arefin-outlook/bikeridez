@@ -1,4 +1,4 @@
-import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faLock, faUser, faLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Col, Form, FormControl, InputGroup, Row } from 'react-bootstrap';
@@ -8,34 +8,48 @@ import google from '../../assets/images/google.png';
 import github from '../../assets/images/github.png';
 import facebook from '../../assets/images/facebook.png';
 
-const Login = () => {
+const Signup = () => {
     const { signInWithGoogle,
         signInWithGithub,
         signInWithEmail,
+        signUp,
         error,
         setError,
         setUser,
         getEmail,
+        getName,
+        getPhoto,
         getPassword } = useAuth();
     return (
 
         <div className="text-center my-5 py-5">
-            <h2>Please Login</h2>
-            <p className=" mt-2">Login with Email & Password</p>
+            <h2>Please Signup</h2>
+            <p className=" mt-2">Signup with Email & Password</p>
             <p className="text-danger text-center">{error}</p>
             <div style={{ maxWidth: "500px" }} className="w-100 px-3 mx-auto">
                 <Form
-                    onSubmit={() => {
-                        signInWithEmail()
-                            .then((result) => {
-                                setUser(result.user);
-                                //history.push(redirect);
-                            })
-                            .catch((err) => {
-                                setError(err.message);
-                            });
-                    }}
+                    onSubmit={signUp}
                 >
+                    <Row>
+                        <Col className="text-start">
+                            <Form.Label htmlFor="email" visuallyHidden>
+                                Enter your name
+                            </Form.Label>
+                            <InputGroup className="mb-2">
+                                <InputGroup.Text>
+                                    <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
+                                </InputGroup.Text>
+                                <FormControl
+                                    onBlur={getName}
+                                    required
+                                    type="text"
+                                    autoComplete="current-email"
+                                    id="name"
+                                    placeholder="Enter your name"
+                                />
+                            </InputGroup>
+                        </Col>
+                    </Row>
                     <Row>
                         <Col className="text-start">
                             <Form.Label htmlFor="email" visuallyHidden>
@@ -75,14 +89,35 @@ const Login = () => {
                         </Col>
                     </Row>
 
+                    <Row>
+                        <Col className="text-start">
+                            <Form.Label htmlFor="email" visuallyHidden>
+                                Enter your valid photo url
+                            </Form.Label>
+                            <InputGroup className="mb-2">
+                                <InputGroup.Text>
+                                    <FontAwesomeIcon icon={faLink}></FontAwesomeIcon>
+                                </InputGroup.Text>
+                                <FormControl
+                                    onBlur={getPhoto}
+                                    required
+                                    type="text"
+                                    autoComplete="current-text"
+                                    id="photo"
+                                    placeholder="Enter your valid photo url"
+                                />
+                            </InputGroup>
+                        </Col>
+                    </Row>
+
                     <button type="submit" className="btn btn-dark mt-2 w-100">
-                        Login
+                        Sign Up
                     </button>
                 </Form>
             </div>
             <p className="mt-2">
-                <NavLink className="text-decoration-none" to="/signup">
-                    Need an Account? Please Sign up!
+                <NavLink className="text-decoration-none" to="/login">
+                    Already have an account? Please Login!
                 </NavLink>
                 <br />
                 <NavLink className="text-decoration-none" to="/reset">
@@ -142,4 +177,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Signup;

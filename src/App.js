@@ -9,14 +9,13 @@ import {
 import Home from './components/Home/Home';
 import Contact from './components/Contact/Contact';
 import Blogs from './components/Blogs/Blogs';
-import Pages from './components/Pages/Pages';
-import Gallery from './components/Gallery/Gallery';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import Header from './components/header/Header';
 import About from './components/About/About';
 import Footer from './components/Footer/Footer';
 import AuthProvider from './components/contexts/AuthProvider';
 import Login from './components/Login/Login';
+import Signup from './components/Signup/Signup';
 
 function App() {
   return (
@@ -41,13 +40,13 @@ function App() {
               <Blogs></Blogs>
             </Route>
             <Route path='/cart'>
-              <Gallery></Gallery>
+              <PageNotFound></PageNotFound>
             </Route>
             <Route path='/login'>
               <Login></Login>
             </Route>
             <Route path='/signup'>
-              <Gallery></Gallery>
+              <Signup></Signup>
             </Route>
             <Route path='*'>
               <PageNotFound></PageNotFound>
