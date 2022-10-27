@@ -37,14 +37,8 @@ function App() {
             <Route path='/contact'>
               <Contact></Contact>
             </Route>
-            <Route path='/pages'>
-              <Pages></Pages>
-            </Route>
             <Route path='/blogs'>
               <Blogs></Blogs>
-            </Route>
-            <Route path='/gallery'>
-              <Gallery></Gallery>
             </Route>
             <Route path='/cart'>
               <Gallery></Gallery>

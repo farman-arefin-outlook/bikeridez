@@ -40,8 +40,28 @@ const Header = () => {
                 <Container>
                     <Nav className="me-auto align-items-center">
                         <Nav.Link as={NavLink} to="/home">Home</Nav.Link>
-                        <Nav.Link as={NavLink} to="/pages">Pages</Nav.Link>
-                        <Nav.Link as={NavLink} to="/gallery">Gallery</Nav.Link>
+                        <NavDropdown title="Pages" id="basic-nav-dropdown">
+                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.2">
+                                Another action
+                            </NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="#action/3.4">
+                                Separated link
+                            </NavDropdown.Item>
+                        </NavDropdown>
+                        <NavDropdown title="Gallery" id="basic-nav-dropdown">
+                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.2">
+                                Another action
+                            </NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="#action/3.4">
+                                Separated link
+                            </NavDropdown.Item>
+                        </NavDropdown>
                         <Nav.Link as={NavLink} to="/blogs">Blogs</Nav.Link>
                         <Nav.Link as={NavLink} to="/about">About</Nav.Link>
                         <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
