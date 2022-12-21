@@ -14,11 +14,12 @@ import { faFacebook, faInstagram, faPinterest, faTwitter, faYoutube } from '@for
 import '../header/Header.css';
 import useAuth from '../hooks/useAuth';
 const Header = () => {
-    const { user, logOut } = useAuth();
+    const { AllContexts, selectedItem } = useAuth();
+    const { user, logOut } = AllContexts;
     const { displayName, photoURL, email } = user;
     return (
         <div className='gfont'>
-            <Navbar className="my-0 p-0 gfontH ms-auto align-items-center" style={{ background: `url(${navBG})` }} bg="dark" variant="dark">
+            <Navbar className="my-0 p-0 gfontH ms-auto align-items-center sticky-top" style={{ background: `url(${navBG})` }} bg="dark" variant="dark">
                 <Container>
                     <Nav>
                         <Nav.Link href="#shipping">Shipping</Nav.Link>
@@ -36,7 +37,7 @@ const Header = () => {
                     </Nav>
                 </Container>
             </Navbar>
-            <Navbar sticky='top' style={{ background: `url(${navBG2})` }} collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar className='sticky-top' style={{ background: `url(${navBG2})` }} collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
                     <Nav className="me-auto align-items-center">
                         <Nav.Link as={NavLink} to="/home">Home</Nav.Link>
@@ -63,6 +64,7 @@ const Header = () => {
                             </NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link as={NavLink} to="/blogs">Blogs</Nav.Link>
+                        <Nav.Link as={NavLink} to="/items">Products</Nav.Link>
                         <Nav.Link as={NavLink} to="/about">About</Nav.Link>
                         <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -75,7 +77,7 @@ const Header = () => {
 
                         </Navbar.Collapse>
                         <Nav.Link as={NavLink} className='pt-4' to="/favourite"><FontAwesomeIcon icon={faCloud} /></Nav.Link>
-                        <Nav.Link className='pt-4' href="#link"><FontAwesomeIcon icon={faShoppingCart} /><Badge className='badge'>0</Badge></Nav.Link>
+                        <Nav.Link className='pt-4' href="#link"><FontAwesomeIcon icon={faShoppingCart} /><Badge className='badge'>{selectedItem.length}</Badge></Nav.Link>
                         {!user.displayName ?
                             (<><Nav.Link as={NavLink} className='pt-4' to="/signup">Sign Up</Nav.Link>
                                 <Nav.Link as={NavLink} className='pt-4' to="/login">Log In</Nav.Link></>) : (<NavDropdown className='pt-3' title={

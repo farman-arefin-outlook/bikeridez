@@ -16,6 +16,8 @@ import Footer from './components/Footer/Footer';
 import AuthProvider from './components/contexts/AuthProvider';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
+import Items from './components/Items/Items';
+import Details from './components/Details/Details';
 
 function App() {
   return (
@@ -38,6 +40,12 @@ function App() {
             </Route>
             <Route path='/blogs'>
               <Blogs></Blogs>
+            </Route>
+            <Route exact path='/items'>
+              <Items></Items>
+            </Route>
+            <Route path='/items/:key'>
+              <Details></Details>
             </Route>
             <Route path='/cart'>
               <PageNotFound></PageNotFound>

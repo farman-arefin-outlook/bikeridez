@@ -9,6 +9,7 @@ import github from '../../assets/images/github.png';
 import facebook from '../../assets/images/facebook.png';
 
 const Login = () => {
+    const { AllContexts } = useAuth();
     const { signInWithGoogle,
         signInWithGithub,
         signInWithEmail,
@@ -16,7 +17,7 @@ const Login = () => {
         setError,
         setUser,
         getEmail,
-        getPassword } = useAuth();
+        getPassword } = AllContexts;
     return (
 
         <div className="text-center my-5 py-5">

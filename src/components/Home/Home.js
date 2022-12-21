@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardGroup, Carousel, Col, Container, Form, FormControl, NavLink, Row } from 'react-bootstrap';
+import { Card, CardGroup, Carousel, Col, Container, Form, FormControl, Row } from 'react-bootstrap';
 import { Bounce, Fade, Slide } from 'react-reveal';
 
 import slider1 from '../../assets/images/slider1.jpg';
@@ -25,9 +25,11 @@ import bannerS2 from '../../assets/images/banner2.jpg';
 import h3banner1 from '../../assets/images/h3-banner1.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelopeCircleCheck } from '@fortawesome/free-solid-svg-icons';
+import useAuth from '../hooks/useAuth';
+import Item from '../Item/Item.js';
 
 const Home = () => {
-    //const { items } = useAuth();
+    const { items } = useAuth();
     return (
         <div className='gfont'>
             <div>
@@ -321,17 +323,21 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* <Container>
+            <Container>
+                <div className="text-center">
+                    <h1 className='orange'>Our Featured Products</h1>
+                    <p>Here is our top reviewd products.You can choice of your own.</p>
+                </div>
                 <div className="my-3 d-flex flex-wrap justify-content-between">
                     <Row>
-                        {items.slice(0, 6)?.map((item) => (
+                        {items.slice(0, 3)?.map((item) => (
                             <Item key={item.key} item={item} />
                         ))}
                     </Row>
                 </div>
-            </Container> */}
+            </Container>
 
-            <div className='subscribe mb-5'>
+            {/* <div className='subscribe mb-5 mt-5'>
                 <div>
                     <Row>
                         <Col>
@@ -355,7 +361,7 @@ const Home = () => {
                     </Row>
                 </div>
 
-            </div>
+            </div> */}
         </div >
 
     );
