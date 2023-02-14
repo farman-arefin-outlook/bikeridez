@@ -29,12 +29,8 @@ const useFirebase = () => {
 
     //google signin
     function signInWithGoogle() {
-        signInWithPopup(auth, googleProvider)
-            .then(res => {
-                setUser(res.user);
-            }).catch(error => {
-                setError(error.message);
-            })
+        return signInWithPopup(auth, googleProvider)
+
     }
 
     //github signin

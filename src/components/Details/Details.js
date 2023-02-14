@@ -10,7 +10,7 @@ import useAuth from '../hooks/useAuth';
 
 const Details = () => {
     const { key } = useParams();
-    const { items } = useAuth();
+    const { items, addToCart } = useAuth();
 
     const matchingItem = items.find(item => item.key === Number(key));
     const { img, title, desc, rating, price } = matchingItem;
@@ -33,7 +33,7 @@ const Details = () => {
                                     emptySymbol={<FontAwesomeIcon className='text-warning' icon={emptyStar} />}
                                     fullSymbol={<FontAwesomeIcon className='text-warning' icon={fullStar} />}
                                 />
-                                <button className='btn btn-dark w-40 d-flex flex-wrap-column mt-4'>Add to Cart</button>
+                                <button onClick={() => addToCart(matchingItem)} className='btn btn-dark w-40 d-flex flex-wrap-column mt-4'>Add to Cart</button>
                             </Col>
                         </Row>
                     </Container>

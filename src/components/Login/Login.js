@@ -7,9 +7,13 @@ import useAuth from '../hooks/useAuth';
 import google from '../../assets/images/google.png';
 import github from '../../assets/images/github.png';
 import facebook from '../../assets/images/facebook.png';
+import { useHistory, useLocation } from 'react-router-dom/cjs/react-router-dom';
 
 const Login = () => {
     const { AllContexts } = useAuth();
+    const history = useHistory();
+    const location = useLocation();
+    const redirect = location?.state?.from || '/home';
     const { signInWithGoogle,
         signInWithGithub,
         signInWithEmail,
@@ -30,7 +34,7 @@ const Login = () => {
                         signInWithEmail()
                             .then((result) => {
                                 setUser(result.user);
-                                //history.push(redirect);
+                                history.push(redirect);
                             })
                             .catch((err) => {
                                 setError(err.message);
@@ -98,7 +102,7 @@ const Login = () => {
                         signInWithGoogle()
                             .then((result) => {
                                 setUser(result.user);
-                                //history.push(redirect);
+                                history.push(redirect);
                             })
                             .catch((err) => {
                                 setError(err.message);

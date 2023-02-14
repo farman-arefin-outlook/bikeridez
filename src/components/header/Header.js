@@ -77,7 +77,7 @@ const Header = () => {
 
                         </Navbar.Collapse>
                         <Nav.Link as={NavLink} className='pt-4' to="/favourite"><FontAwesomeIcon icon={faCloud} /></Nav.Link>
-                        <Nav.Link className='pt-4' href="#link"><FontAwesomeIcon icon={faShoppingCart} /><Badge className='badge'>{selectedItem.length}</Badge></Nav.Link>
+                        <Nav.Link as={NavLink} className='pt-4' to="/cart"><FontAwesomeIcon icon={faShoppingCart} /><Badge className='badge'>{selectedItem.length}</Badge></Nav.Link>
                         {!user.displayName ?
                             (<><Nav.Link as={NavLink} className='pt-4' to="/signup">Sign Up</Nav.Link>
                                 <Nav.Link as={NavLink} className='pt-4' to="/login">Log In</Nav.Link></>) : (<NavDropdown className='pt-3' title={
